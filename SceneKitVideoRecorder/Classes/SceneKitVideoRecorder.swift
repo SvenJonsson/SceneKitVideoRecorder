@@ -88,7 +88,8 @@ public class SceneKitVideoRecorder: NSObject, AVAudioRecorderDelegate {
     guard let device = MTLCreateSystemDefaultDevice() else { return }
     self.renderer = SCNRenderer(device: device, options: nil)
     renderer.scene = self.sceneView.scene
-
+    renderer.pointOfView = self.sceneView.pointOfView
+    
     initialTime = kCMTimeInvalid
 
     self.options.videoSize = options.videoSize
